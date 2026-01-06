@@ -114,14 +114,26 @@
       padding: clamp(30px, 6vw, 50px) 20px; color: #fff; position: relative;
       transition: background-image var(--transition-speed) var(--transition-ease);
     }
-    .hero h1 .highlight-word { display: inline-block; animation: subtleTextPopIn 1s var(--transition-ease) forwards; opacity: 0; }
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto 1.25rem;
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+.hero h1 .highlight-word { display: inline-block; animation: subtleTextPopIn 1s var(--transition-ease) forwards; opacity: 0; }
     .hero h1 .highlight-word:nth-child(1) { animation-delay: 0.1s; } .hero h1 .highlight-word:nth-child(2) { animation-delay: 0.3s; }
     .hero h1 .highlight-word:nth-child(3) { animation-delay: 0.5s; }
     @keyframes subtleTextPopIn { 0% { transform: translateY(25px) scale(0.9); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
     .hero p.subtitle {
-      color: #FFFFFF; 
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem); margin-bottom: 1.8rem; max-width: 700px; animation: fadeInDelayed 1.2s var(--transition-ease) 0.8s forwards; opacity: 0;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      margin: 0 auto 2.1rem;
+      max-width: 760px;
+      animation: fadeInDelayed 1.2s var(--transition-ease) 0.8s forwards;
+      opacity: 0;
+      text-wrap: balance;
     }
     @keyframes fadeInDelayed { to { opacity: 1; } }
     .cta-button {
@@ -131,12 +143,12 @@
       transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none; letter-spacing: 0.5px;
     }
-    .hero .cta-button { animation: fadeInDelayed 1.2s var(--transition-ease) 1s forwards; opacity: 0; }
+    .hero .cta-button { animation: fadeInDelayed 1.2s var(--transition-ease) 1s forwards; opacity: 0; margin-top: 0.3rem; margin-bottom: 2.2rem; }
     .cta-button:hover { background-color: #c8a634; transform: scale(1.05) translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25); }
     .cta-button i { margin-left: 0.75rem; transition: transform 0.3s ease; }
     .cta-button:hover i { transform: translateX(5px); }
     .scroll-down-arrow {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
       font-size: 2.5rem; 
       color: #FFFFFF; 
       opacity: 0.9; 
@@ -478,11 +490,12 @@
   <section class="hero" id="hero">
     <div class="container">
       <h1>
-        <span class="highlight-word">We</span> <span class="highlight-word">build</span> <span class="highlight-word gold">systems</span><br>that help service businesses get more customers — and manage them effortlessly.
+        <span class="highlight-word">We</span> <span class="highlight-word">build</span> <span class="highlight-word gold">systems</span><br>
+        that help service businesses get more customers — and manage them effortlessly.
       </h1>
       <p class="subtitle">Websites, automation, dashboards, and marketing — combined into one clear business system.</p>
       <a href="#contact" class="cta-button">Book a Free Demo <i class="fas fa-arrow-right"></i></a>
-    </div>
+</div>
     <a href="#work" class="scroll-down-arrow" aria-label="Scroll to Our Work"><i class="fas fa-chevron-down"></i></a>
   </section>
 
@@ -557,7 +570,7 @@
         </div>
          <div class="card portfolio-item animate-pop-in" data-delay="500">
           <img src="./images/portfolio-laas.jpg" alt="Laas Coffee Branding" loading="lazy">
-          <h3>LAAS COFFEE</h3>
+          <h3>LAAS <br> COFFEE</h3>
           <span class="client-service">Cafe - Branding &amp; Social Launch</span>
           <div class="gallery-details">
             <h4>Project: Laas Coffee Brand Launch &amp; Social Media Kickstart</h4>
@@ -584,8 +597,8 @@
     <div class="container">
       <div class="founder-content">
         <h2 class="gold" style="margin-bottom: 1.5rem;">Meet Abdi Hashi</h2>
-        <p>Hi, I'm Abdi Hashi, the founder and creative lead at <strong>NairobiPixel</strong>. I help service businesses build systems that attract and manage customers—conversion-focused websites, automation, and dashboards that keep work moving.</p>
-        <p>Because I live and work in Nairobi, I understand how local customers search, buy, and follow up. We'll collaborate closely to map your process, then deliver a system your team can run confidently.</p>
+        <p>Hi, I\'m Abdi Hashi, the founder and creative lead at <strong>NairobiPixel</strong>. I help service businesses build systems that attract and manage customers—conversion-focused websites, automation, and dashboards that keep work moving.</p>
+        <p>Because I live and work in Nairobi, I understand how local customers search, buy, and follow up. We\'ll collaborate closely to map your process, then deliver a system your team can run confidently.</p>
         <a href="#contact" class="cta-button">Let's Create Together <i class="fas fa-pen-nib"></i></a>
       </div>
     </div>
@@ -1141,51 +1154,51 @@
   const serviceModalList = document.getElementById('serviceModalList');
   let previousActiveElementService = { el: null };
   const serviceDetailsContentFull = {
-    'Strategic Social Media': {
-      title: 'Business Management Systems',
-      description: 'Replace WhatsApp and Excel chaos with one dashboard built around how your team actually works.',
-      items: [
-        'Customer database & profiles',
-        'Booking/inquiry tracking',
-        'Status tracking (e.g., application stages)',
-        'Invoice & payment records',
-        'Staff accounts & accountability',
-        'Reporting/exports (optional)',
-      ],
-    },
-    'Impactful Web Design': {
-      title: 'High-Converting Websites',
-      description: 'Conversion-first sites that plug directly into your system.',
-      items: [
-        'Conversion-focused layout',
-        'WhatsApp + forms integrated',
-        'Analytics/Pixel setup',
-        'SEO foundations',
-        'Fast + mobile-first',
-      ],
-    },
-    'Targeted Paid Advertising': {
-      title: 'Growth & Automation',
-      description: 'Growth systems to capture, nurture, and measure leads.',
-      items: [
-        'Lead funnels & landing pages',
-        'Follow-up automation (do not overpromise; keep wording general)',
-        'Retargeting strategy',
-        'Performance reporting',
-        'Ads management setup (Meta/Google optional)',
-      ],
-    },
-    'Memorable Branding': {
-      title: 'Branding & Content',
-      description: 'Brand clarity that boosts trust and conversion.',
-      items: [
-        'Messaging & positioning',
-        'Visual identity refresh',
-        'Content templates',
-        'Brand consistency system',
-        'Social content structure',
-      ],
-    },
+      'Strategic Social Media': {
+        title: 'Business Management Systems',
+        description: 'Replace WhatsApp and Excel chaos with one dashboard built around how your team actually works.',
+        items: [
+          'Customer database & profiles',
+          'Booking/inquiry tracking',
+          'Status tracking (e.g., application stages)',
+          'Invoice & payment records',
+          'Staff accounts & accountability',
+          'Reporting/exports (optional)'
+        ]
+      },
+      'Impactful Web Design': {
+        title: 'High-Converting Websites',
+        description: 'Conversion-first sites that plug directly into your system.',
+        items: [
+          'Conversion-focused layout',
+          'WhatsApp + forms integrated',
+          'Analytics/Pixel setup',
+          'SEO foundations',
+          'Fast + mobile-first'
+        ]
+      },
+      'Targeted Paid Advertising': {
+        title: 'Growth & Automation',
+        description: 'Growth systems to capture, nurture, and measure leads.',
+        items: [
+          'Lead funnels & landing pages',
+          'Follow-up automation (keep wording general)',
+          'Retargeting strategy',
+          'Performance reporting',
+          'Ads management setup (Meta/Google optional)'
+        ]
+      },
+      'Memorable Branding': {
+        title: 'Branding & Content',
+        description: 'Brand clarity that boosts trust and conversion.',
+        items: [
+          'Messaging & positioning',
+          'Visual identity refresh',
+          'Content templates',
+          'Brand consistency system',
+          'Social content structure'
+        ]
+      }
   };
 
   function openServiceModal(serviceName) {
